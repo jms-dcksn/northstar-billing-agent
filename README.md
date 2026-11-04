@@ -4,6 +4,14 @@ LangChain `create_agent`, Claude Sonnet, deterministic billing tools, and a cust
 
 See the [interactive architecture guide](docs/architecture.html) and [evaluation philosophy](docs/evaluation-approach.md).
 
+## Customer flow
+
+Live Claude Sonnet run: report a duplicate charge, confirm the billing records, approve the $19.99 refund, verify the transaction, and leave feedback. All customer records and refunds are simulated.
+
+![Customer confirms duplicate charges, approves a $19.99 refund, and receives verification](docs/media/customer-refund.gif)
+
+To record again, start both services and run `node scripts/record-demo.mjs` (requires Playwright Chromium and uses Anthropic API credit). The full video and screenshots are saved under `.runtime/demo/`.
+
 ## Start
 
 Requires Python 3.12+, uv and Node 22+.
@@ -81,6 +89,6 @@ With the UI running, `node tests/ui-smoke.mjs` verifies all five scenarios and m
 - Matches BUILD.md and the diagram's file-based policies. The brief's vector search and production OTel/alerting pipeline are deferred; optional native LangSmith tracing captures model/tool runs and token usage.
 - Demo login is a selectable fixture, pinned to the chat on the server. There is no real authentication or multi-user access isolation. Bind locally only.
 - Fixture time is fixed at November 3, 2026, 18:00 UTC, so eligibility does not expire during practice. Money uses integer cents. Non-USD requests require review because the policy defines only a dollar limit.
-- The regex injection tripwire is illustrative. Authorization and financial controls remain enforced in tools independently of model output. Model prose and real provider latency have not been validated.
+- The regex injection tripwire is illustrative. Authorization and financial controls remain enforced in tools independently of model output. The live happy path is recorded above; broader model behavior and latency have not been benchmarked.
 - Three retries means four total POST attempts, with 0.25s, 0.5s and 1s backoff. On exhaustion, submission remains unknown and a ticket is created; no refund success is claimed.
 - Local LangGraph checkpoints and billing state survive ordinary restarts. Closing or cancelling a browser run does not reverse an accepted mock refund. This is a practice build, not a production service.
