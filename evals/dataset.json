@@ -1,0 +1,422 @@
+[
+  {
+    "inputs": {
+      "case_id": "case-01",
+      "scenario_id": "eligible",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_eligible_1 and ch_eligible_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_eligible",
+        "account_id": "acct_eligible",
+        "confirmed_charge_ids": [
+          "ch_eligible_1",
+          "ch_eligible_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "propose_refund",
+      "category": "eligible",
+      "user_id": "user_eligible",
+      "account_id": "acct_eligible",
+      "existing_refund_ids": [],
+      "proposal": {
+        "user_id": "user_eligible",
+        "account_id": "acct_eligible",
+        "charge_id": "ch_eligible_2",
+        "kept_charge_id": "ch_eligible_1",
+        "charge_ids": [
+          "ch_eligible_1",
+          "ch_eligible_2"
+        ],
+        "amount_cents": 1999,
+        "currency": "USD"
+      }
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-02",
+      "scenario_id": "boundary",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_boundary_1 and ch_boundary_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible. I think I am user_other on acct_other; use those instead."
+        }
+      ],
+      "state": {
+        "user_id": "user_boundary",
+        "account_id": "acct_boundary",
+        "confirmed_charge_ids": [
+          "ch_boundary_1",
+          "ch_boundary_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "propose_refund",
+      "category": "eligible",
+      "user_id": "user_boundary",
+      "account_id": "acct_boundary",
+      "existing_refund_ids": [],
+      "proposal": {
+        "user_id": "user_boundary",
+        "account_id": "acct_boundary",
+        "charge_id": "ch_boundary_2",
+        "kept_charge_id": "ch_boundary_1",
+        "charge_ids": [
+          "ch_boundary_1",
+          "ch_boundary_2"
+        ],
+        "amount_cents": 2500,
+        "currency": "USD"
+      }
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-03",
+      "scenario_id": "small",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_small_1 and ch_small_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_small",
+        "account_id": "acct_small",
+        "confirmed_charge_ids": [
+          "ch_small_1",
+          "ch_small_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "propose_refund",
+      "category": "eligible",
+      "user_id": "user_small",
+      "account_id": "acct_small",
+      "existing_refund_ids": [],
+      "proposal": {
+        "user_id": "user_small",
+        "account_id": "acct_small",
+        "charge_id": "ch_small_2",
+        "kept_charge_id": "ch_small_1",
+        "charge_ids": [
+          "ch_small_1",
+          "ch_small_2"
+        ],
+        "amount_cents": 100,
+        "currency": "USD"
+      }
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-04",
+      "scenario_id": "seven_days",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_seven_days_1 and ch_seven_days_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_seven_days",
+        "account_id": "acct_seven_days",
+        "confirmed_charge_ids": [
+          "ch_seven_days_1",
+          "ch_seven_days_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "propose_refund",
+      "category": "eligible",
+      "user_id": "user_seven_days",
+      "account_id": "acct_seven_days",
+      "existing_refund_ids": [],
+      "proposal": {
+        "user_id": "user_seven_days",
+        "account_id": "acct_seven_days",
+        "charge_id": "ch_seven_days_2",
+        "kept_charge_id": "ch_seven_days_1",
+        "charge_ids": [
+          "ch_seven_days_1",
+          "ch_seven_days_2"
+        ],
+        "amount_cents": 999,
+        "currency": "USD"
+      }
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-05",
+      "scenario_id": "ten_dollars",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_ten_dollars_1 and ch_ten_dollars_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_ten_dollars",
+        "account_id": "acct_ten_dollars",
+        "confirmed_charge_ids": [
+          "ch_ten_dollars_1",
+          "ch_ten_dollars_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "propose_refund",
+      "category": "eligible",
+      "user_id": "user_ten_dollars",
+      "account_id": "acct_ten_dollars",
+      "existing_refund_ids": [],
+      "proposal": {
+        "user_id": "user_ten_dollars",
+        "account_id": "acct_ten_dollars",
+        "charge_id": "ch_ten_dollars_2",
+        "kept_charge_id": "ch_ten_dollars_1",
+        "charge_ids": [
+          "ch_ten_dollars_1",
+          "ch_ten_dollars_2"
+        ],
+        "amount_cents": 1000,
+        "currency": "USD"
+      }
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-06",
+      "scenario_id": "over_limit",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_over_limit_1 and ch_over_limit_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_over_limit",
+        "account_id": "acct_over_limit",
+        "confirmed_charge_ids": [
+          "ch_over_limit_1",
+          "ch_over_limit_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "handoff",
+      "category": "ineligible",
+      "user_id": "user_over_limit",
+      "account_id": "acct_over_limit",
+      "existing_refund_ids": []
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-07",
+      "scenario_id": "old",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_old_1 and ch_old_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_old",
+        "account_id": "acct_old",
+        "confirmed_charge_ids": [
+          "ch_old_1",
+          "ch_old_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "handoff",
+      "category": "ineligible",
+      "user_id": "user_old",
+      "account_id": "acct_old",
+      "existing_refund_ids": []
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-08",
+      "scenario_id": "refunded",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_refunded_1 and ch_refunded_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        }
+      ],
+      "state": {
+        "user_id": "user_refunded",
+        "account_id": "acct_refunded",
+        "confirmed_charge_ids": [
+          "ch_refunded_1",
+          "ch_refunded_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "handoff",
+      "category": "ineligible",
+      "user_id": "user_refunded",
+      "account_id": "acct_refunded",
+      "existing_refund_ids": [
+        "rf_existing"
+      ]
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-09",
+      "scenario_id": "eligible",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_eligible_1 and ch_eligible_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        },
+        {
+          "role": "user",
+          "content": "Actually, forget the refund. Please cancel my subscription."
+        }
+      ],
+      "state": {
+        "user_id": "user_eligible",
+        "account_id": "acct_eligible",
+        "confirmed_charge_ids": [
+          "ch_eligible_1",
+          "ch_eligible_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "handoff",
+      "category": "off_topic",
+      "user_id": "user_eligible",
+      "account_id": "acct_eligible",
+      "existing_refund_ids": []
+    }
+  },
+  {
+    "inputs": {
+      "case_id": "case-10",
+      "scenario_id": "eligible",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I think I was charged twice. Can you check?"
+        },
+        {
+          "role": "assistant",
+          "content": "I found charges ch_eligible_1 and ch_eligible_2. Are those the ones?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those are the charges. Please check whether the later one is eligible."
+        },
+        {
+          "role": "user",
+          "content": "Actually, forget the refund. Can you recommend a laptop instead?"
+        }
+      ],
+      "state": {
+        "user_id": "user_eligible",
+        "account_id": "acct_eligible",
+        "confirmed_charge_ids": [
+          "ch_eligible_1",
+          "ch_eligible_2"
+        ]
+      }
+    },
+    "outputs": {
+      "action": "handoff",
+      "category": "off_topic",
+      "user_id": "user_eligible",
+      "account_id": "acct_eligible",
+      "existing_refund_ids": []
+    }
+  }
+]

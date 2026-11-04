@@ -1,0 +1,27 @@
+.env
+.venv/
+.runtime/
+.langgraph_api/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+ui/node_modules/
+ui/.next/
+ui/.env.local
+ui/*.tsbuildinfo
+evals/results/
+BUILD.md
+brief.md
+Northstar.png
+
+# Local settings, generated data and dependencies
+.env*
+!.env.example
+node_modules/
+.next/
+*.tsbuildinfo
+.DS_Store
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*

@@ -1,0 +1,5 @@
+{
+  "dependencies": ["."],
+  "graphs": {"agent": "./northstar/server.py:graph"},
+  "env": ".env"
+}

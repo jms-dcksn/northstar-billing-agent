@@ -1,0 +1,21 @@
+[project]
+name = "northstar-billing-prototype"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "langchain>=1.0,<2",
+  "langchain-anthropic>=1.0,<2",
+  "langgraph-cli[inmem]>=0.4,<1",
+  "langsmith>=0.4,<1",
+  "python-dotenv>=1.1,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.14,<1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
